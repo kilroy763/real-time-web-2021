@@ -1,0 +1,36 @@
+const fetcher = require('./fetch')
+
+async function actor(req, res) {
+    const data = await fetcher.fetchActor()
+    res.render('actor', {
+        info: data
+    });
+    console.log(data)
+}
+
+async function movie(req, res) {
+    const movieData = await fetcher.fetchMovie()
+    res.render('movie', {
+        movieInfo: movieData
+    });
+}
+
+async function home(req, res) {
+    res.render('home');
+}
+
+async function show(req, res) {
+    const showData = await fetcher.fetchShow()
+    res.render('show', {
+        showInfo: showData
+    });
+    console.log(showInfo)
+}
+
+
+module.exports = {
+    actor,
+    show,
+    movie,
+    home
+}
