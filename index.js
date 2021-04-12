@@ -16,7 +16,6 @@ app.set('views', 'views');
 // Express laten weten dat er gebruik wordt gemaakt van een statisch folder
 app.use(express.static(path.join(__dirname, '/public')));
 
-// Als de route "/" is dan moet de site geredirect worden naar "/breakingbad"
 app.get('/', redirect)
 
 function redirect(req, res) {
