@@ -6,4 +6,3 @@ if (socket) {
     console.log('socket connected to client')
 }
 
-console.log(info)

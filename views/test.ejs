@@ -1,0 +1,36 @@
+<%- include ./partials/head.ejs %>
+ 
+<h1>Welk seizoen is dit?</h1>
+<section>
+            <% data.MRData.DriverTable.Drivers.forEach(driver => { -%>
+                    <p> <%- driver.familyName %></p>
+       
+     
+    <% }); %>
+    </section>
+
+    <form action="/test" method="POST">
+        <input type="text" name="antwoord" id="check">
+        <input type="submit" id="submit" >
+    </form>
+
+<script>
+
+document.getElementById('submit').onclick = function(){
+
+var check= document.getElementById("check").value == "2019";
+
+if (check){
+    console.log('true')
+} 
+if(!check){
+    console.log('false')
+}
+ 
+};
+
+
+</script>
+
+
+<%- include ./partials/footer.ejs %>

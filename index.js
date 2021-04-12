@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+var bodyParser = require('body-parser')
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
@@ -22,6 +23,10 @@ app.set('views', 'views');
 // Express laten weten dat er gebruik wordt gemaakt van een statisch folder
 app.use(express.static(path.join(__dirname, '/public')));
 
+app.use(bodyParser.urlencoded({ extended: true}))
+
+app.use(bodyParser.json())
+
 // Als de route "/" is dan moet de site geredirect worden naar "/breakingbad"
 app.get('/', redirect)
 
@@ -31,11 +36,27 @@ function redirect(req, res) {
 
 app.get('/home', render.home)
 
-app.get('/actor', render.actor);
+app.get('/test', render.test)
 
-app.get('/movie', render.movie);
 
-app.get('/show', render.show);
+app.post('/test', render.test, function (req, res) {
+    var check= document.getElementById("check").value == "text_value";
+
+    //check will be true or false
+    if (check){
+        console.log('true')
+    } //do something if true}
+    if(!check){
+        console.log('false')
+    }//do something if false}
+} 
+)
+
+// app.get('/actor', render.actor);
+
+// app.get('/movie', render.movie);
+
+// app.get('/show', render.show);
 
 
 
