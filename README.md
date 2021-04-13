@@ -34,14 +34,23 @@ Ik heb 4 concepten gehad, waarbij ik gegaan ben voor de Formula 1 API. Hieronder
 
 ### Pub Quiz
 Ik had als eerst het idee om een pub quiz te maken. Hierbij wilde ik werken met de volgende API: https://opentdb.com/api_config.php. Ik had dit al werkend gekregen in mijn code en gekeken naar de data. Hierbij kwam ik erachter dat de vragen vrij lastig waren en erg breedt. Het zijn niet echt dingen die je algemeen weet maar toevallig kon weten of moet gokken. Dit vond ik niet leuk en daardoor heb ik gekozen verder te denken.
+![Pub quiz schets](https://github.com/kilroy763/real-time-web-2021/blob/main/ReadmeImages/concept1.jpg?raw=true)  
 
 ### Music Guesser 
 Tijdens het denken voor een nieuw concept kwam ik op met Music Guesser. Je hebt op Youtube video's die dit simuleren. Hierbij moet je aan de hand van het horen van een nummer voor 10 seconden het nummer raden. Ik wilde dit online maken zodat er een puntentelling bij hangt. Ik kon alleen geen API vinden die hier aan voldeedt. Je hebt wel de embed van spotify die exact doet wat ik nodig heb, namenlijk een nummer laten horen voor 30 seconden. Alleen hier was geen soort gelijke API voor. Hierom heb ik na een middag zoeken het opgegeven. 
+![Music Guesser schets](https://github.com/kilroy763/real-time-web-2021/blob/main/ReadmeImages/concept2.jpg?raw=true)  
 
 ### Celeb Image Guesser 
 Aan het eind van de dag ging ik kijken naar de API die ik in de vorige vakken al gebruikt hebt. Namenlijk "TMDB", ik ging nadenken hoe ik dit kan combineren met socket.io. Hierbij kwam ik op het idee om via TMDB afbeeldingen te pakken van celebrities van bekende films. Die te blurren met CSS en de gebruikers de celebrities laten raden. Ook wilde ik dit met film posters doen en serie posters. Ik heb dit toch niet gekozen omdat de API geen "populaire films" sectie heeft en ik dan een random ID moet kiezen, hierbij kunnen ook onbekende films tussen zitten met onbekende acteurs.
+![Celeb Image Guesser schets](https://github.com/kilroy763/real-time-web-2021/blob/main/ReadmeImages/Concept3.jpg?raw=true)  
 
 ### Formula 1 Quiz. 
 Tot slot had ik het concept voor een F1 quiz. Ik heb een API gevonden die informatie bevat van alle seizoenen. Hierom wil ik een app maken waarbij je rooms kan maken met een optie tot 1 vs 1 kennis test. Je krijgt dan random feiten te zien over bepaalde seizoenen en moet dan raden welk seizoen het bijvoorbeeld is. 
+![F1 quiz schets](https://github.com/kilroy763/real-time-web-2021/blob/main/ReadmeImages/concept4.jpg?raw=true)  
 
+### Gekozen API
+De gekozen API is de Formula 1 API van Ergast (https://ergast.com/mrd/). Dit is een API dat jaarlijks update, hierin staat allerlij formule 1 gegevens. Je kan de races, courreurs, tracks en teams terugvinden.
+
+### Data Modelling
+![Data Modelling](https://github.com/kilroy763/real-time-web-2021/blob/main/ReadmeImages/datamodelling.jpg?raw=true)
 <!-- ...but how does one use this project? What are its features 🤔 -->
