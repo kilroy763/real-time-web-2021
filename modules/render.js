@@ -32,8 +32,17 @@ async function test(req, res) {
     res.render('test', {
         data: fetchData
     });
-    console.log(fetchData)
+  
 }
+
+async function constructor(req, res) {
+    const fetchData2 = await fetcher.fetchDataConstructorQ()
+    res.render('constructor', {
+        data: fetchData2
+    });
+}
+
+
 
 
 
@@ -42,5 +51,6 @@ module.exports = {
     // show,
     // movie,
     home,
-    test
+    test,
+    constructor
 }

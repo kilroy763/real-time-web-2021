@@ -11,7 +11,7 @@ messageForm.addEventListener('submit', e =>{
     const message = answerInput.value
 
     if ( message == '2019'){
-        var checkMSG = ". Hij heeft het goed!"
+        var checkMSG = " Hij heeft het goed!"
     } else{
         var checkMSG = ". Hij heeft het  fout!"
     }
@@ -33,7 +33,7 @@ socket.on('connect', () => {console.log(socket.id + 'user connected')});
 
 socket.on('chat-message', data => {
     console.log(data)
-    appendMessage(`${data.user}: ${data.message} `)
+    appendMessage(`${data.user}: ${data.message} ${data.checkmessage} `)
 })
 
 socket.on('user-connected', user => {

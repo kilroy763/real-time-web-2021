@@ -4,22 +4,29 @@ const fetch = require('node-fetch')
 // const cors = 'https://api.themoviedb.org/3/'; //algemene link van de API
 // const key = 'ae3a232f0096c607ad590f0ec850e635'; //static key van de API
 
-const cors = 'http://ergast.com/api/f1/2019/drivers.json'; //algemene link van de API
-
-// var randomMovies = [
-//     "272",
-//     "101",
-//     "104"
-//   ];
 
 
-//   var randomShows= [
-//     "1396"
-//   ];
+var max = '2021'
+var min = '1970'
+
+var season = Math.floor(Math.random() * (+max - +min)) + +min;
+
+const URLSeasonQ = `http://ergast.com/api/f1/${season}/drivers.json`; //algemene link van de API
+
+console.log(URLSeasonQ)
+
+const URLConstructorQ = `http://ergast.com/api/f1/${season}/constructors.json`
+
 
 
 async function fetchData(data){
-    const fetch_response = await fetch(cors)
+    const fetch_response = await fetch(URLSeasonQ)
+    const json = await fetch_response.json();
+    return json
+}
+
+async function fetchDataConstructorQ(dataConstructor){
+    const fetch_response = await fetch(URLConstructorQ)
     const json = await fetch_response.json();
     return json
 }
@@ -63,5 +70,6 @@ module.exports = {
     // fetchActor,
     // fetchMovie,
     // fetchShow
-    fetchData
+    fetchData,
+    fetchDataConstructorQ
 }

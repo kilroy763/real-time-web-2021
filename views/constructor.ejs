@@ -1,0 +1,21 @@
+<%- include ./partials/head.ejs %>
+ 
+<h1>Welk seizoen is dit?</h1>
+<section>
+            <% data.MRData.ConstructorTable.Constructors.forEach(Constructor => { -%>
+                    <p> <%- Constructor.name %></p>
+       
+     
+    <% }); %>
+    </section>
+
+    <div id="message-container"></div>
+    <form action="/test" method="POST"  id="send-container">
+        <input type="text" name="antwoord" id="answer-input" >
+        <input type="submit" >
+    </form>
+
+
+
+
+<%- include ./partials/footer.ejs %>
