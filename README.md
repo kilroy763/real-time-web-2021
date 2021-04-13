@@ -53,4 +53,8 @@ De gekozen API is de Formula 1 API van Ergast (https://ergast.com/mrd/). Dit is 
 
 ### Data Modelling
 ![Data Modelling](https://github.com/kilroy763/real-time-web-2021/blob/main/ReadmeImages/datamodelling.jpg?raw=true)
-<!-- ...but how does one use this project? What are its features 🤔 -->
+
+
+## Proof of Concept
+### Spike solution
+Ik heb voor mijn spike solution gekeken naar een simpele functie van mijn site. Hierbij heb ik de sockets verbonden met elkaar, een chat werkend gekregen en de antwoorden laten checken van de gebruikers. Dit is in samenwerking met de API. 
