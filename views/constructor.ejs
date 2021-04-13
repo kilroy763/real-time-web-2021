@@ -1,6 +1,7 @@
 <%- include ("./partials/head.ejs") %>
  
 <h1>Welk seizoen is dit?</h1>
+<h2 id="antwoord"><%-data.MRData.ConstructorTable.season%></h2>
 <section>
             <% data.MRData.ConstructorTable.Constructors.forEach(Constructor => { -%>
                     <p> <%- Constructor.name %></p>

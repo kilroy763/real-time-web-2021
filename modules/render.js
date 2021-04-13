@@ -19,6 +19,8 @@ async function home(req, res) {
     res.render('home');
 }
 
+
+
 // async function show(req, res) {
 //     const showData = await fetcher.fetchShow()
 //     res.render('show', {
@@ -29,7 +31,7 @@ async function home(req, res) {
 
 async function test(req, res) {
     const fetchData = await fetcher.fetchData()
-    res.render('test', {
+    res.render('season', {
         data: fetchData
     });
 }

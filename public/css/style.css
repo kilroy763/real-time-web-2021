@@ -11,7 +11,10 @@ body {
     background: #15151E;
     color: #fff;
     font-family: 'Rubik', sans-serif;
-    /* center the table horizontally */
+
+}
+
+.grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -44,7 +47,7 @@ body {
     text-align: center;
 }
 
-h2 {
+#antwoord {
     display: none;
 }
 

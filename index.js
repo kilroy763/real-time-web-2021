@@ -21,16 +21,16 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.get('/', redirect)
 
 function redirect(req, res) {
-	res.redirect('/test');
+	res.redirect('/home');
 }
 
 app.get('/home', render.home)
 
-app.get('/test', render.test)
+app.get('/season/drivers', render.test)
 
-app.get('/constructor', render.constructor)
+app.get('/season/constructor', render.constructor)
 
-app.post('/test', render.test)
+app.post('/season/drivers', render.test)
 
 
 const users = {}
