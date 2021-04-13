@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const http = require('http').Server(app);
+const http = require('http').createServer(app)
 const io = require('socket.io')(http);
 const request = require('request');
 const path = require('path');
@@ -13,6 +13,7 @@ app.set('view engine', 'ejs');
 
 // Aan express laten weten waar de templates staan
 app.set('views', 'views');
+
 
 // Express laten weten dat er gebruik wordt gemaakt van een statisch folder
 app.use(express.static(path.join(__dirname, '/public')));
