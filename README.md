@@ -12,6 +12,7 @@ Vrijdag ben ik begonnen aan de individuele opdracht. Ik wilde eerst een trivia a
 
 ### Maandag
 Vandaag moesten we beginnen aan '(Proof of) Concept'. Aangezien ik al wat concepten heb verzonnen had ik hier al een voorsprong in. Ondanks dat heb ik ze toch even netjes uitgewerkt en bepaalde keuze's toegelicht. Verders heb ik vandaag weer mijn concept, hopelijk voor de laatste keer, omgedraaid. Ik heb een F1 API gevonden. Omdat ik fan ben van F1 heb ik gekozen om hier mee te werken. Ik wil een 1 vs 1 quiz maken, waarbij je bepaalde feiten over een seizoen, baan of courreur ziet en aan de hand van dit moet raden welke seizoen, baan of courreur het is. 
+Het is mij vandaag gelukt om de sockets aan de praat te krijgen met een verbinding en waarbij gekeken wordt of het gegeven antwoord goed is. Alleen lukte het mij niet om de app te deployen op heroku, hiervoor ga ik morgen verder kijken.
 
 
 
