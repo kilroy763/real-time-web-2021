@@ -1,11 +1,11 @@
-<%- include ./partials/head.ejs %>
+<%- include ("./partials/head.ejs") %>
  
 
 
 <h2 id="antwoord"><%-data.MRData.DriverTable.season%></h2>
-<section class="Question">
-<h1>Welk seizoen is dit?</h1>
 
+<h1>Welk seizoen is dit?</h1>
+<section class="Question"></section>
             <% data.MRData.DriverTable.Drivers.forEach(driver => { -%>
                     <p> <%- driver.familyName %></p>
     <% }); %>
@@ -31,4 +31,4 @@
 
 
 
-<%- include ./partials/footer.ejs %>
+<%- include ("./partials/footer.ejs") %>
