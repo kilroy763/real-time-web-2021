@@ -1,20 +1,33 @@
 <%- include ./partials/head.ejs %>
  
+
+
+<h2 id="antwoord"><%-data.MRData.DriverTable.season%></h2>
+<section class="Question">
 <h1>Welk seizoen is dit?</h1>
-<section>
+
             <% data.MRData.DriverTable.Drivers.forEach(driver => { -%>
                     <p> <%- driver.familyName %></p>
-       
-     
     <% }); %>
     </section>
 
+
+
+    <section class="Players">
+        <h1> Je speelt tegen:</h1>
+        <div id="playerContainer"></div>
+
+    </section>
+      
+   
+  
+<section class="Answers">
     <div id="message-container"></div>
     <form action="/test" method="POST"  id="send-container">
         <input type="text" name="antwoord" id="answer-input" >
         <input type="submit" >
     </form>
-
+</section>
 
 
 

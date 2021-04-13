@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    border-top: 4px solid #DC0000;
+    background: #15151E;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    /* center the table horizontally */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "Question Question Players Players"
+        "Question Question Answers Answers"
+        "Footer Footer Footer Footer";
+}
+
+.Question {
+    grid-area: Question;
+    text-align: center;
+}
+
+.Players {
+    grid-area: Players;
+    text-align: center;
+}
+
+.Answers {
+    grid-area: Answers;
+    text-align: center;
+    max-height: 150px;
+}
+
+.Footer {
+    grid-area: Footer;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    display: none;
+}
+

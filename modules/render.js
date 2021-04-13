@@ -32,8 +32,11 @@ async function test(req, res) {
     res.render('test', {
         data: fetchData
     });
-  
 }
+
+
+
+
 
 async function constructor(req, res) {
     const fetchData2 = await fetcher.fetchDataConstructorQ()

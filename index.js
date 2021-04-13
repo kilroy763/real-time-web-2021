@@ -6,7 +6,7 @@ const request = require('request');
 const path = require('path');
 const port = 5000;
 const render = require('./modules/render.js');
-const fetcher = require('./modules/fetch.js')
+const fetcher = require('./modules/fetch.js');
 
 // link de templating engine aan express
 app.set('view engine', 'ejs');
@@ -48,23 +48,12 @@ io.on('connection', (socket) => {
     })
 
     socket.on('send-chat-message', message => {
-        console.log(message)
+        console.log(message + ' dit is message')
+        socket.broadcast.emit('chat-message', {message: message, user: users[socket.id]})
+    })
 
-        async function test(req, res) {
-            const fetchDataTest = await fetcher.fetchData()
-            console.log(fetchDataTest + 'dit is fetchdata')
-            if ( message == fetchDataTest.MRData.DriverTable.season){
-                var checkMSG = ". Hij heeft het goed!"
-            } else{
-                var checkMSG = ". Hij heeft het  fout!"
-                return checkMSG
-            }
-
-        }
-        console.log(test.checkMSG + ' dit is checkmsg')
-        
-
-        socket.broadcast.emit('chat-message', {message: message, checkmessage: test.checkMSG, user: users[socket.id]})
+    socket.on('check-answer', checkMSG => {
+        socket.broadcast.emit('answer', checkMSG)
     })
 
     socket.on('disconnect', () => {
