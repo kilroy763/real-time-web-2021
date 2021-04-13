@@ -1,5 +1,16 @@
 # Real-Time Web @cmda-minor-web · 2020/21
 
+## Live link
+Work in progress
+
+## To Do list
+- [x] socket.io werkend krijgen
+- [x] spike maken (controlleren of antwoord goed of fout is)
+- [ ] Rooms toevoegen
+- [ ] Live link fixen
+- [ ] CSS toevoegen
+- [ ] Data Life Cycle
+
 ## Week 1 
 
 ### Dinsdag
