@@ -1,7 +1,7 @@
 # Real-Time Web @cmda-minor-web · 2020/21
 
 ## Live link
-Work in progress
+https://formula1trivia.herokuapp.com/home
 
 ## To Do list
 - [x] socket.io werkend krijgen
@@ -25,9 +25,13 @@ Vrijdag ben ik begonnen aan de individuele opdracht. Ik wilde eerst een trivia a
 Vandaag moesten we beginnen aan '(Proof of) Concept'. Aangezien ik al wat concepten heb verzonnen had ik hier al een voorsprong in. Ondanks dat heb ik ze toch even netjes uitgewerkt en bepaalde keuze's toegelicht. Verders heb ik vandaag weer mijn concept, hopelijk voor de laatste keer, omgedraaid. Ik heb een F1 API gevonden. Omdat ik fan ben van F1 heb ik gekozen om hier mee te werken. Ik wil een 1 vs 1 quiz maken, waarbij je bepaalde feiten over een seizoen, baan of courreur ziet en aan de hand van dit moet raden welke seizoen, baan of courreur het is. 
 Het is mij vandaag gelukt om de sockets aan de praat te krijgen met een verbinding en waarbij gekeken wordt of het gegeven antwoord goed is. Alleen lukte het mij niet om de app te deployen op heroku, hiervoor ga ik morgen verder kijken.
 
+### Dinsdag
+Dinsdag heb ik gewerkt aan de prototype en wat CSS toegepast. Verders heb ik mijn Spike afgemaakt en de readme aangevuld. Ook heb ik het werkend gekregen dat mijn JS checkt of het antwoord goed is. Wat ik nog moet aanpassen is dat de gebruikers geen Alert melding krijgen voor het invullen van hun naam maar dat dat van te voren gebeurd. Ook wil het nog zo maken dat als een antwoord goed is ingevuld dat een user een punt krijgt en dat er een nieuwe fetch wordt uitgevoerd. Dit is alleen voor volgende week.
 
 
-
+## Week 3
+### Maandag
+### Dinsdag
 
 ## (Proof of) Concept
 Ik heb 4 concepten gehad, waarbij ik gegaan ben voor de Formula 1 API. Hieronder zijn de concepten te lezen
