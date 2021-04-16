@@ -21,7 +21,7 @@ body {
     gap: 0px 0px;
     grid-template-areas:
         "Question Question Players Players"
-        "Question Question points points"
+
         "Question Question Answers Answers"
         "Footer Footer Footer Footer";
 }
@@ -36,10 +36,6 @@ body {
     text-align: center;
 }
 
-.points {
-    grid-area: points;
-    text-align: center;
-}
 
 .Answers {
     grid-area: Answers;

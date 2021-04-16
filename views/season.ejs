@@ -32,22 +32,19 @@
 
 
     <section class="Players">
-        <p class="speler"> Hey <%- user %>,</p>
-        <h1> Je speelt tegen:</h1>
+        
+        <h1>Puntentelling</h1>
+        <p class="speler"><%- user %></p>
         <div id="playerContainer"></div>
     </section>
       
-    <section class="points">
-        <p>
-            Puntentelling
-        </p>
-    </section>
+    
    
   
 <section class="Answers">
     <div id="message-container"></div>
-    <form action="/test" method="POST"  id="send-container">
-        <input type="number" name="antwoord" id="answer-input" >
+    <form action="/season/drivers" method="POST"  id="send-container">
+        <input type="number" name="answer" id="answer-input" >
         <input type="submit" >
     </form>
 </section>

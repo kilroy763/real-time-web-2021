@@ -43,6 +43,8 @@ function appendPlayer(player){
     playerContainer.append(playerElement)
 }
 
+
+
 socket.emit('new-user', user)
 
 socket.on('connect', () => {console.log(socket.id + 'user connected')});
