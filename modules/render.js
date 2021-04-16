@@ -19,6 +19,10 @@ async function home(req, res) {
     res.render('home');
 }
 
+async function login(req, res) {
+    const user = req.body.user
+    res.render('user');
+}
 
 
 // async function show(req, res) {
@@ -31,8 +35,11 @@ async function home(req, res) {
 
 async function test(req, res) {
     const fetchData = await fetcher.fetchData()
+    const user = req.body.user
+
     res.render('season', {
-        data: fetchData
+        data: fetchData,
+        user : user
     });
 }
 
@@ -57,5 +64,6 @@ module.exports = {
     // movie,
     home,
     test,
-    constructor
+    constructor,
+    login
 }

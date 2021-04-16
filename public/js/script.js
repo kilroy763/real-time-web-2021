@@ -1,11 +1,10 @@
 console.log('script connected')
 
 const socket = io()
-const user = prompt('Wat is je gebruikersnaam?')
+const user = document.querySelector('.speler').textContent
 const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const answerInput = document.getElementById('answer-input')
-
 
 
 messageForm.addEventListener('submit', e =>{

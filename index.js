@@ -7,6 +7,7 @@ const path = require('path');
 const port = 5000;
 const render = require('./modules/render.js');
 const fetcher = require('./modules/fetch.js');
+const bodyParser = require('body-parser')
 
 // link de templating engine aan express
 app.set('view engine', 'ejs');
@@ -18,6 +19,8 @@ app.set('views', 'views');
 // Express laten weten dat er gebruik wordt gemaakt van een statisch folder
 app.use(express.static(path.join(__dirname, '/public')));
 
+app.use(bodyParser.urlencoded({ extended: true}))
+
 app.get('/', redirect)
 
 function redirect(req, res) {
@@ -26,11 +29,16 @@ function redirect(req, res) {
 
 app.get('/home', render.home)
 
+app.get('/login', render.login)
+
+app.post('/login', render.login)
+
+app.post('/season/drivers', render.test)
+
 app.get('/season/drivers', render.test)
 
 app.get('/season/constructor', render.constructor)
 
-app.post('/season/drivers', render.test)
 
 
 const users = {}
@@ -54,6 +62,15 @@ io.on('connection', (socket) => {
     })
 
     socket.on('check-answer', checkMSG => {
+        console.log(checkMSG + ' checkmsg')
+        if (checkMSG == 'Dit is goed!'){
+
+            console.log('dit is goedd')
+        } else{
+            console.log('dit is fouttt')
+        }
+
+      
         socket.broadcast.emit('answer', checkMSG)
     })
 

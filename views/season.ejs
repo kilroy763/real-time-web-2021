@@ -2,19 +2,37 @@
  <div class="grid-container">
 
 
-<h2 id="antwoord"><%-data.MRData.DriverTable.season%></h2>
+<h2 id="antwoord"><%-data.MRData.StandingsTable.season%></h2>
 
 
 <section class="Question">
 <h1>Welk seizoen is dit?</h1>
-            <% data.MRData.DriverTable.Drivers.forEach(driver => { -%>
-                    <p> <%- driver.familyName %></p>
+<table>
+    <thead>
+    <tr>
+        <td>Positie</td>
+        <td>Naam</td>
+        <td>Wins</td>
+        <td>Punten</td>
+    </tr>
+</thead>
+    <tbody>
+            <% data.MRData.StandingsTable.StandingsLists[0].DriverStandings.forEach(standing => { -%>
+                <tr>
+                    <td> <%- standing.position %></td>
+                    <td> <%- standing.Driver.givenName %> <%- standing.Driver.familyName %></td>
+                    <td> <%- standing.wins %></td>
+                    <td> <%- standing.points %></td>
+                </tr>
     <% }); %>
+</tbody>
+</table>
     </section>
 
 
 
     <section class="Players">
+        <p class="speler"> Hey <%- user %>,</p>
         <h1> Je speelt tegen:</h1>
         <div id="playerContainer"></div>
 

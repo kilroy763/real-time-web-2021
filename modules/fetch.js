@@ -6,7 +6,7 @@ var min = '1990'
 
 var season = Math.floor(Math.random() * (+max - +min)) + +min;
 
-const URLSeasonQ = `http://ergast.com/api/f1/${season}/drivers.json`; //algemene link van de API
+const URLSeasonQ = `http://ergast.com/api/f1/${season}/driverStandings.json`; //algemene link van de API
 
 console.log(URLSeasonQ)
 
