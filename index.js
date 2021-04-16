@@ -63,6 +63,7 @@ io.on('connection', (socket) => {
 
     socket.on('check-answer', checkMSG => {
         console.log(checkMSG + ' checkmsg')
+        
         if (checkMSG == 'Dit is goed!'){
 
             console.log('dit is goedd')

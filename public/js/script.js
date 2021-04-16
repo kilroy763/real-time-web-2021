@@ -17,6 +17,8 @@ messageForm.addEventListener('submit', e =>{
     } else{
         var checkMSG = "Dit is fout!"
     }
+
+    messageContainer.scrollTop = messageContainer.scrollHeight
  
     console.log(message + ' check antwoord')
     console.log(answer + ' check msg')
