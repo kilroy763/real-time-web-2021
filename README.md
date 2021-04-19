@@ -3,14 +3,6 @@
 ## Live link
 https://formula1trivia.herokuapp.com/home
 
-## To Do list
-- [x] socket.io werkend krijgen
-- [x] spike maken (controlleren of antwoord goed of fout is)
-- [ ] Rooms toevoegen
-- [ ] Live link fixen
-- [ ] CSS toevoegen
-- [ ] Data Life Cycle
-
 ## Week 1 
 
 ### Dinsdag
@@ -55,6 +47,9 @@ Tot slot had ik het concept voor een F1 quiz. Ik heb een API gevonden die inform
 ### Gekozen API
 De gekozen API is de Formula 1 API van Ergast (https://ergast.com/mrd/). Dit is een API dat jaarlijks update, hierin staat allerlij formule 1 gegevens. Je kan de races, courreurs, tracks en teams terugvinden.
 
+#### Wat doet de web app
+Gebruiker een username laten invoeren en tegen elkaar laten spelen. Door middel van de API fetch ik een random tabel met driver standings van een random seizoen. Hierbij moeten de gebruikers raden over welk seizoen het gaat. Het ingevoerde seizoen wordt gecheckt of dit goed is. Als dit goed is krijgt de speler die hem als eerste invoerde een punt en dan wordt er weer een nieuw seizoen gefetched,
+
 ### Data Modelling
 ![Data Modelling](https://github.com/kilroy763/real-time-web-2021/blob/main/ReadmeImages/datamodelling.jpg?raw=true)
 
@@ -62,3 +57,122 @@ De gekozen API is de Formula 1 API van Ergast (https://ergast.com/mrd/). Dit is 
 ## Proof of Concept
 ### Spike solution
 Ik heb voor mijn spike solution gekeken naar een simpele functie van mijn site. Hierbij heb ik de sockets verbonden met elkaar, een chat werkend gekregen en de antwoorden laten checken van de gebruikers. Dit is in samenwerking met de API. 
+
+## De API
+De gebruikte API is van Ergast. Hij heeft allemaal formule 1 data gesorteerd. Hieruit pak ik dan de random tabellen met driverstandings.
+
+### API Response 
+
+```
+"MRData": {
+    "xmlns": "http:\/\/ergast.com\/mrd\/1.4",
+    "series": "f1",
+    "url": "http://ergast.com/api/f1/2008/driverstandings.json",
+    "limit": "30",
+    "offset": "0",
+    "total": "22",
+    "StandingsTable": {
+      "season": "2008",
+      "StandingsLists": [
+        {
+          "season": "2008",
+          "round": "18",
+          "DriverStandings": [
+            {
+              "position": "1",
+              "positionText": "1",
+              "points": "98",
+              "wins": "5",
+              "Driver": {
+                "driverId": "hamilton",
+                "permanentNumber": "44",
+                "code": "HAM",
+                "url": "http:\/\/en.wikipedia.org\/wiki\/Lewis_Hamilton",
+                "givenName": "Lewis",
+                "familyName": "Hamilton",
+                "dateOfBirth": "1985-01-07",
+                "nationality": "British"
+              },
+              "Constructors": [
+                {
+                  "constructorId": "mclaren",
+                  "url": "http:\/\/en.wikipedia.org\/wiki\/McLaren",
+                  "name": "McLaren",
+                  "nationality": "British"
+                }
+              ]
+            },
+```
+Dit is een stukje van de response. Hierin zie je alleen de eerste driver van de tabel en dit kan doorgaan tot 30 drivers.
+
+### Connect and randomize
+```
+var max = '2021'
+var min = '1990'
+
+var season = Math.floor(Math.random() * (+max - +min)) + +min;
+
+const URLSeasonQ = `http://ergast.com/api/f1/${season}/driverStandings.json`;
+
+async function fetchData(data){
+    const fetch_response = await fetch(URLSeasonQ)
+    const json = await fetch_response.json();
+    return json
+}
+```
+Ik randomize eerst het getal voor het seizoen. Zodra ik een random getal heb tussen 1990 en 2021, plak ik dat tussen de URL van de fetch. Hierna fetch ik de betreffende data.
+
+### Data tonen
+De betreffende data wordt als volgt in mijn EJS gerenderd
+```
+<table>
+    <thead>
+    <tr>
+        <td>Positie</td>
+        <td>Naam</td>
+        <td>Wins</td>
+        <td>Punten</td>
+        <td>Team</td>
+    </tr>
+</thead>
+    <tbody>
+            <% data.MRData.StandingsTable.StandingsLists[0].DriverStandings.forEach(standing => { -%>
+                <tr>
+                    <td> <%- standing.position %></td>
+                    <td> <%- standing.Driver.givenName %> <%- standing.Driver.familyName %></td>
+                    <td> <%- standing.wins %></td>
+                    <td> <%- standing.points %></td>
+                    <td> <%- standing.Constructors[0].name %></td>
+                </tr>
+    <% }); %>
+</tbody>
+</table>
+```
+
+## Gebruikte Packages
+De packages die ik heb gebruikt zijn de volgende:
+* Body-Parser
+* EJS
+* Express
+* Node-fetch
+* Socket.io
+* Nodemon *Als dev dependencie
+
+## Hoe te installeren?
+### 1. Clone de repo
+
+```
+git clone https://github.com/kilroy763/real-time-web-2021
+```
+
+### 2. Install de packages
+
+```
+npm install
+```
+
+### 3. Start de server
+```
+npm run start
+```
+De server is dan te vinden op http://localhost:5000
