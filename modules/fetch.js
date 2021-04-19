@@ -6,13 +6,7 @@ var min = '1990'
 
 var season = Math.floor(Math.random() * (+max - +min)) + +min;
 
-const URLSeasonQ = `http://ergast.com/api/f1/${season}/driverStandings.json`; //algemene link van de API
-
-console.log(URLSeasonQ)
-
-const URLConstructorQ = `http://ergast.com/api/f1/${season}/constructors.json`
-
-
+const URLSeasonQ = `http://ergast.com/api/f1/${season}/driverStandings.json`;
 
 async function fetchData(data){
     const fetch_response = await fetch(URLSeasonQ)
@@ -20,11 +14,14 @@ async function fetchData(data){
     return json
 }
 
+console.log(URLSeasonQ)
+
 async function fetchDataConstructorQ(dataConstructor){
     const fetch_response = await fetch(URLConstructorQ)
     const json = await fetch_response.json();
     return json
 }
+
 
 
 

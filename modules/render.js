@@ -24,15 +24,6 @@ async function login(req, res) {
     res.render('user');
 }
 
-
-// async function show(req, res) {
-//     const showData = await fetcher.fetchShow()
-//     res.render('show', {
-//         showInfo: showData
-//     });
-//     console.log(showInfo)
-// }
-
 async function test(req, res) {
     const fetchData = await fetcher.fetchData()
     const user = req.body.user

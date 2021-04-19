@@ -1,11 +1,14 @@
 <%- include ("./partials/head.ejs") %>
 
 <main>
-    <h2>Kies een nickname</h2>
-    <form action="/season/drivers" method="post">
-        <input type="text" name="user" id="user" autocomplete="off">
-        <input type="submit">
-    </form>
+    <article class="login">
+        <h2>Kies een nickname</h2>
+        <form action="/season/drivers" method="post">
+            <input type="text" name="user" id="user" autocomplete="off" placeholder="username">
+            <input type="submit">
+        </form>
+    </article>
+
 </main>
 
 <%- include ("./partials/footer.ejs") %>

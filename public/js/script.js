@@ -14,8 +14,10 @@ messageForm.addEventListener('submit', e =>{
 
     if ( message === answer){
         var checkMSG = "Dit is goed!"
+        socket.emit('correct-answer', message)
     } else{
         var checkMSG = "Dit is fout!"
+        socket.emit('false-answer', message)
     }
 
     messageContainer.scrollTop = messageContainer.scrollHeight
@@ -51,27 +53,57 @@ socket.on('connect', () => {console.log(socket.id + 'user connected')});
 
 
 
-socket.on('chat-message', data => {
-    console.log(data)
-    appendMessage(`${data.user}: ${data.message}  `)
+socket.on('chat-message', data2 => {
+    console.log(data2)
+    appendMessage(`${data2.user}: ${data2.message}  `)
 })
 
 socket.on('answer', checkMSG =>{
     appendMessage(` ${checkMSG}`)
 })
 
-socket.on('newFetch', data =>{
-  console.log(data)
+socket.on('correct-answer-function', correct =>{
+    console.log(correct)
+
+    var answer = document.getElementById('antwoord')
+    answer.innerHTML = ''
+    answer.innerHTML = `${correct.fetchTest.MRData.StandingsTable.season}`
+
+    var tableRow = document.getElementById('tableBody')
+    tableRow.innerHTML = '';
+    
+    
+    correct.fetchTest.MRData.StandingsTable.StandingsLists[0].DriverStandings.forEach(standing => {
+    var table = document.getElementById('tableBody')
+    var row = table.insertRow(0);
+    var position = row.insertCell(0);
+    var driver = row.insertCell(1);
+    var wins = row.insertCell(2);
+    var points = row.insertCell(3);
+    var team = row.insertCell(4);
+    position.innerHTML = standing.position; 
+    driver.innerHTML = `${standing.Driver.givenName} ${standing.Driver.familyName}`;
+    wins.innerHTML = standing.wins
+    points.innerHTML = standing.points
+    team.innerHTML = standing.Constructors[0].name
+    })
+ 
 })
+
+
+
+
 
 socket.on('user-connected', user => {
     appendMessage(`${user} is erbij`)
+    console.log(user)
     appendPlayer( `${user}`)
 })
 
 socket.on('user-disconnected', user => {
     appendMessage(`${user} is weg`)
 })
+
 
 
 

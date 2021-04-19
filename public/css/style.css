@@ -79,7 +79,7 @@ article > h1, article > p{
 }
 
 .play {
-    background-color: red;
+    background-color: #DC0000;
     color: white;
     width: 300px;
     text-decoration: none;
@@ -92,6 +92,19 @@ article > h1, article > p{
     font-size: 1.5em;
     padding-top: 0.5em;
 }
+
+.login {
+    border-radius: 0;
+}
+
+.login > form > input[type=submit]{
+    color: white;
+    background-color:#DC0000;
+    border: none;
+    width: 100%;
+}
+
+
 
 table {
     margin: 1em auto;
