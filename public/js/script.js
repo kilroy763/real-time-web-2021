@@ -45,6 +45,12 @@ function appendPlayer(player){
     playerContainer.append(playerElement)
 }
 
+function appendScore(score){
+    const playerElement = document.createElement('span')
+    playerElement.innerText = score
+    playerContainer.append(playerElement)
+}
+
 
 
 socket.emit('new-user', user)
@@ -71,8 +77,13 @@ socket.on('correct-answer-function', correct =>{
 
     var tableRow = document.getElementById('tableBody')
     tableRow.innerHTML = '';
+
+    var score = document.querySelector('span').innerText
+    var score = +score + 1
     
-    
+    console.log(score + ' scoreee')
+    appendScore(`${score}`)
+
     correct.fetchTest.MRData.StandingsTable.StandingsLists[0].DriverStandings.forEach(standing => {
     var table = document.getElementById('tableBody')
     var row = table.insertRow(0);
@@ -94,10 +105,11 @@ socket.on('correct-answer-function', correct =>{
 
 
 
-socket.on('user-connected', user => {
-    appendMessage(`${user} is erbij`)
-    console.log(user)
-    appendPlayer( `${user}`)
+socket.on('user-connected', userData => {
+    appendMessage(`${userData.user} is erbij`)
+    console.log(userData)
+    appendPlayer( `${userData.user} `)
+    appendScore(`${userData.score}`)
 })
 
 socket.on('user-disconnected', user => {

@@ -62,7 +62,8 @@ io.on('connection', (socket) => {
 
     socket.on("new-user", user => {
         users[socket.id] = user
-        socket.broadcast.emit('user-connected', user)
+        score = 0
+        io.emit('user-connected', {user, score})
         console.log(JSON.stringify(user) + ' dit zijn de users')
     })
 
@@ -92,8 +93,11 @@ io.on('connection', (socket) => {
         const json = await fetch_response.json();
         return json
     }
+
+    score = 0
+
     var fetchTest = await fetchData()
-    io.emit('correct-answer-function', {message, fetchTest})
+    io.emit('correct-answer-function', {message, fetchTest, score})
     })
 
 

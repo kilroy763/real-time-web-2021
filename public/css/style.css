@@ -104,7 +104,9 @@ article > h1, article > p{
     width: 100%;
 }
 
-
+.speler{
+    display: none;
+}
 
 table {
     margin: 1em auto;
