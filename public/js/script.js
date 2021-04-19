@@ -60,6 +60,10 @@ socket.on('answer', checkMSG =>{
     appendMessage(` ${checkMSG}`)
 })
 
+socket.on('newFetch', data =>{
+  console.log(data)
+})
+
 socket.on('user-connected', user => {
     appendMessage(`${user} is erbij`)
     appendPlayer( `${user}`)

@@ -36,8 +36,6 @@ async function login(req, res) {
 async function test(req, res) {
     const fetchData = await fetcher.fetchData()
     const user = req.body.user
-    const answer = req.body.answer
-    console.log(answer)
 
     res.render('season', {
         data: fetchData,

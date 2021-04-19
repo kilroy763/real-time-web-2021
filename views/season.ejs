@@ -14,6 +14,7 @@
         <td>Naam</td>
         <td>Wins</td>
         <td>Punten</td>
+        <td>Team</td>
     </tr>
 </thead>
     <tbody>
@@ -23,6 +24,7 @@
                     <td> <%- standing.Driver.givenName %> <%- standing.Driver.familyName %></td>
                     <td> <%- standing.wins %></td>
                     <td> <%- standing.points %></td>
+                    <td> <%- standing.Constructors[0].name %></td>
                 </tr>
     <% }); %>
 </tbody>

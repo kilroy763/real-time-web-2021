@@ -65,7 +65,10 @@ io.on('connection', (socket) => {
         console.log(checkMSG + ' checkmsg')
 
         if (checkMSG == 'Dit is goed!'){
-
+           var newFetch =  fetcher.fetchData().then(data => {
+               socket.broadcast.emit('newFetch', data)
+           })
+            console.log(newFetch + 'dit is newfetch')
             console.log('dit is goedd')
         } else{
             console.log('dit is fouttt')
