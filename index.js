@@ -56,21 +56,44 @@ const users = {}
 
 
 
-
 io.on('connection', (socket) => {
     console.log(socket.id + ' is geconnect')
 
+
     socket.on("new-user", user => {
-        users[socket.id] = user
-        score = 0
-        io.emit('user-connected', {user, score})
+        
+            let roomData = []
+            user = {user: user, score: 0 }
+            users[socket.id] = user
+        
+            for (const [key, value] of Object.entries(users)) {
+                    roomData.push(users[key])
+            }
+
+            console.log(JSON.stringify(roomData) + ' dit is de roomdata')
+        
+ 
+
+
+        
+       
+        // userID = socket.id
+        // user = {user: user, score: 0, userID: userID}
+        // users['allUsers'] = user
+    
+        io.emit('user-connected', roomData)
+        console.log(JSON.stringify(users) + ' dit is user array')
         console.log(JSON.stringify(user) + ' dit zijn de users')
     })
 
     socket.on("disconnect", () => {
-        socket.broadcast.emit('user-disconnected', users[socket.id])
+        let roomData = []
         delete users[socket.id] 
+        for (const [key, value] of Object.entries(users)) {
+            roomData.push(users[key])
+    }
         console.log(JSON.stringify(users) + ' dit zijn de users na disconnect')
+        socket.broadcast.emit('user-disconnected', roomData)
     })
 
     socket.on('send-chat-message', message => {
@@ -114,9 +137,6 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('answer', checkMSG)
     })
 
-    socket.on('disconnect', () => {
-        console.log('user disconnected')
-    })
 })
 
 

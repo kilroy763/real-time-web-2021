@@ -5,6 +5,7 @@ const user = document.querySelector('.speler').textContent
 const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const answerInput = document.getElementById('answer-input')
+const playerContainer2 = document.getElementById('playerContainer')
 
 
 messageForm.addEventListener('submit', e =>{
@@ -41,6 +42,7 @@ function appendMessage(message){
 
 function appendPlayer(player){
     const playerElement = document.createElement('div')
+    playerElement.innerText = ''
     playerElement.innerText = player
     playerContainer.append(playerElement)
 }
@@ -51,6 +53,16 @@ function appendScore(score){
     playerElement.innerText = score
     playerContainer.append(playerElement)
 }
+
+function updateList(data) {
+
+    playerContainer2.innerHTML = ''
+    data.forEach(obj => {
+        playerContainer2.innerHTML += '<div ><p class="username">' + obj.user + '</p><p id="scores">' + obj.score + '</p></div>'
+    })
+}
+
+// updates userlist, so scores and users
 
 
 
@@ -122,14 +134,27 @@ socket.on('correct-answer-function', correct =>{
 
 
 socket.on('user-connected', userData => {
-    appendMessage(`${userData.user} is erbij`)
+    
+    console.log(JSON.stringify(userData) + ' dit is de userdata')
     console.log(userData)
-    appendPlayer( `${userData.user} `)
-    appendScore(`${userData.score}`)
+    updateList(userData)
+    // userData.forEach(user => {
+    //     appendMessage(`${user.user} is erbij`)
+    //     appendPlayer( `${user.user} `)
+    //     appendScore(`${user.score}`)
+    // })
+
+    // appendMessage(`${userData.users.allUsers.user} is erbij`)
+    // console.log(JSON.stringify(userData) + ' dit is de userdata')
+    // console.log(userData)
+
+    // appendPlayer( `${userData.users.allUsers.user} `)
+    // appendScore(`${userData.users.allUsers.score}`)
 })
 
 socket.on('user-disconnected', user => {
-    appendMessage(`${user} is weg`)
+    appendMessage(`${user.user} is weg`)
+    updateList(user)
 })
 
 

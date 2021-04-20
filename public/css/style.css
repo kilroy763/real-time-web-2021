@@ -17,11 +17,12 @@ body {
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr;
+  
     gap: 0px 0px;
     grid-template-areas:
+        "logo logo logo logo"
         "Question Question Players Players"
-
         "Question Question Answers Answers"
         "Footer Footer Footer Footer";
 }
@@ -115,4 +116,12 @@ table {
 
 td{
     padding: 0.25em 1em 0.25em 1em;
+}
+
+.headerLogo{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    grid-area: logo;
+    text-align: center;
 }
