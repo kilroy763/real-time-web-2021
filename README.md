@@ -178,3 +178,5 @@ npm install
 npm run start
 ```
 De server is dan te vinden op http://localhost:5000
+
+https://www.w3schools.com/jsref/met_table_insertrow.asp
