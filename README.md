@@ -1,5 +1,4 @@
-![Web 1920 – 1](https://user-images.githubusercontent.com/58260542/115445166-c949c500-a215-11eb-90ba-644f634f66d7.png)
-![Web 1920 – 1](https://user-images.githubusercontent.com/58260542/115445188-cfd83c80-a215-11eb-9e8d-ca29aa7bab78.png)
+
 # Real-Time Web @cmda-minor-web · 2020/21
 
 ## Live link
@@ -58,6 +57,9 @@ Gebruiker een username laten invoeren en tegen elkaar laten spelen. Door middel 
 ### Data Modelling
 ![Data Modelling](https://github.com/kilroy763/real-time-web-2021/blob/main/ReadmeImages/datamodelling.jpg?raw=true)
 
+
+## Data Life Cycle Diagram
+![Web 1920 – 1](https://user-images.githubusercontent.com/58260542/115445166-c949c500-a215-11eb-90ba-644f634f66d7.png)
 
 ## Proof of Concept
 ### Spike solution
@@ -182,5 +184,12 @@ npm run start
 ```
 De server is dan te vinden op http://localhost:5000
 
-https://www.w3schools.com/jsref/met_table_insertrow.asp
-https://www.youtube.com/watch?v=rxzOqP9YwmM&ab_channel=WebDevSimplified
+## Gebruikte bronnen
+
+* *w3schools. (z.d.). HTML DOM Table insertRow() Method. Geraadpleegd op 20 april 2021, van https://www.w3schools.com/jsref/met_table_insertrow.asp
+
+* *Web Dev Simplified. (2019, 25 mei). Build a Real Time Chat App With Node.js And Socket.io [Video]. YouTube. https://www.youtube.com/watch?v=rxzOqP9YwmM&ab_channel=WebDevSimplified
+
+* *Pixsellz. (z.d.). Icon-icons [Afbeelding]. Icon-icons. https://icon-icons.com/nl/pictogram/laptop-windows/117106
+
+* *Webalys. (z.d.). Icon-icons [Afbeelding]. Icon-icons. https://icon-icons.com/nl/pictogram/server-2/47937
