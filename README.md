@@ -186,13 +186,13 @@ De server is dan te vinden op http://localhost:5000
 
 ## Gebruikte bronnen
 
-* *w3schools. (z.d.). HTML DOM Table insertRow() Method. Geraadpleegd op 20 april 2021, van https://www.w3schools.com/jsref/met_table_insertrow.asp  
+* *w3schools. (z.d.). HTML DOM Table insertRow() Method. Geraadpleegd op 20 april 2021, van https://www.w3schools.com/jsref/met_table_insertrow.asp* 
 
-* *Web Dev Simplified. (2019, 25 mei). Build a Real Time Chat App With Node.js And Socket.io [Video]. YouTube. https://www.youtube.com/watch?v=rxzOqP9YwmM&ab_channel=WebDevSimplified  
+* *Web Dev Simplified. (2019, 25 mei). Build a Real Time Chat App With Node.js And Socket.io [Video]. YouTube. https://www.youtube.com/watch?v=rxzOqP9YwmM&ab_channel=WebDevSimplified*
 
-* *Pixsellz. (z.d.). Icon-icons [Afbeelding]. Icon-icons. https://icon-icons.com/nl/pictogram/laptop-windows/117106  
+* *Pixsellz. (z.d.). Icon-icons [Afbeelding]. Icon-icons. https://icon-icons.com/nl/pictogram/laptop-windows/117106* 
 
-* *Webalys. (z.d.). Icon-icons [Afbeelding]. Icon-icons. https://icon-icons.com/nl/pictogram/server-2/47937  
-* 
-* *Groot, R. (z.d.). RickGroot/pokemon-game. GitHub. Geraadpleegd op 20 april 2021, van https://github.com/RickGroot/pokemon-game  
-*Disclaimer, Rick heeft mij geholpen met het scoreboard en de live userlijst. Hierom kunnnen sommige elementen van de code overeenkomen.
+* *Webalys. (z.d.). Icon-icons [Afbeelding]. Icon-icons. https://icon-icons.com/nl/pictogram/server-2/47937* 
+
+* *Groot, R. (z.d.). RickGroot/pokemon-game. GitHub. Geraadpleegd op 20 april 2021, van https://github.com/RickGroot/pokemon-game*  
+*Disclaimer, Rick heeft mij geholpen met het scoreboard en de live userlijst. Hierom kunnnen sommige elementen van de code overeenkomen.*
