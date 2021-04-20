@@ -45,9 +45,14 @@ body {
 }
 
 #message-container{
-    max-height: 150px;
-    overflow: scroll
+    max-height:150px;
+    min-height:150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 4em;
 }
+
+
 
 #send-container{
     display: block;
