@@ -26,6 +26,7 @@ Dinsdag heb ik gewerkt aan de prototype en wat CSS toegepast. Verders heb ik mij
 De maandag heb ik veel progressie geboekt. Zo heb ik in de ochtend na het college en de standup eerst gekeken naar een nieuwe fetch creeeren zodra het antwoord goed is. Dit is gelukt, hierna heb ik de scores toegepast zodat ze optellen. Dit is nog niet volledig succesvol omdat ik nu bij elke +1 een 01 en 011 krijg in plaats van dat er echt opgeteld wordt. Hier kijk ik morgen verder naar. Tot slot heb ik nog de readme verder aangepast met informatie over mijn project. Morgen zal ik aan de slag gaan met de data lifecycle diagram en de user lijst live updaten.
 
 ### Dinsdag
+De dinsdag ben ik bezig geweest met de puntjes op de i. Ik heb bijvoorbeeld de user list live gemaakt en de scores werkend gekregen. Dit ging alleen niet heel makkelijk dus heeft Rick mij even geholpen. Ik heb ook de readme en data life cycle diagram afgemaakt. Hierdoor ben ik helemaal ready voor de oplevering.
 
 ## (Proof of) Concept
 Ik heb 4 concepten gehad, waarbij ik gegaan ben voor de Formula 1 API. Hieronder zijn de concepten te lezen
@@ -180,3 +181,4 @@ npm run start
 De server is dan te vinden op http://localhost:5000
 
 https://www.w3schools.com/jsref/met_table_insertrow.asp
+https://www.youtube.com/watch?v=rxzOqP9YwmM&ab_channel=WebDevSimplified
