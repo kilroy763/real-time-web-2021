@@ -23,6 +23,8 @@ Dinsdag heb ik gewerkt aan de prototype en wat CSS toegepast. Verders heb ik mij
 
 ## Week 3
 ### Maandag
+De maandag heb ik veel progressie geboekt. Zo heb ik in de ochtend na het college en de standup eerst gekeken naar een nieuwe fetch creeeren zodra het antwoord goed is. Dit is gelukt, hierna heb ik de scores toegepast zodat ze optellen. Dit is nog niet volledig succesvol omdat ik nu bij elke +1 een 01 en 011 krijg in plaats van dat er echt opgeteld wordt. Hier kijk ik morgen verder naar. Tot slot heb ik nog de readme verder aangepast met informatie over mijn project. Morgen zal ik aan de slag gaan met de data lifecycle diagram en de user lijst live updaten.
+
 ### Dinsdag
 
 ## (Proof of) Concept
