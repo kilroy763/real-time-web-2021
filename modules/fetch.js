@@ -2,7 +2,7 @@
 const fetch = require('node-fetch')
 
 var max = '2021'
-var min = '1990'
+var min = '1950'
 
 var season = Math.floor(Math.random() * (+max - +min)) + +min;
 

@@ -47,6 +47,7 @@ function appendPlayer(player){
 
 function appendScore(score){
     const playerElement = document.createElement('span')
+    playerElement.setAttribute("id", "scores");
     playerElement.innerText = score
     playerContainer.append(playerElement)
 }
@@ -78,16 +79,31 @@ socket.on('correct-answer-function', correct =>{
     var tableRow = document.getElementById('tableBody')
     tableRow.innerHTML = '';
 
-    var score = document.querySelector('span').innerText
-    var score = +score + 1
+ 
+    var score = document.getElementById('scores').innerHTML 
+    console.log(score + ' dit is score ')
+    let scores = Number(score)
+    console.log(scores)
+        let newScore = scores + 1
+        document.getElementById('scores').innerHTML = newScore
+
+    // var score = document.getElementById('scores').value
+  
+
+
+
+    // var score = parseInt(document.getElementById('scores').value, 10);
+    // score = isNaN(score) ? 0 : score;
+    // +score++;
+ 
+    console.log(typeof(score) + ' scoreee')
+
     
-    console.log(score + ' scoreee')
-    appendScore(`${score}`)
 
     correct.fetchTest.MRData.StandingsTable.StandingsLists[0].DriverStandings.forEach(standing => {
     var table = document.getElementById('tableBody')
-    var row = table.insertRow(0);
-    var position = row.insertCell(0);
+    var row = table.insertRow(-1);
+    var position = row.insertCell(-1);
     var driver = row.insertCell(1);
     var wins = row.insertCell(2);
     var points = row.insertCell(3);
