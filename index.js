@@ -101,6 +101,29 @@ io.on('connection', (socket) => {
 
         socket.broadcast.emit('chat-message', {message: message, user: users[socket.id]})
     })
+
+    socket.on('point', data => {
+
+        let roomData = []
+
+    
+        let userId = socket.id
+
+        let score = Number(data.score)
+        let newScore = score + 1
+        users[userId].score = newScore
+        
+
+        console.log(users[userId].score + ' scoreee')
+
+        for (const [key, value] of Object.entries(users)) {
+            roomData.push(users[key])
+            }
+        // console.log(JSON.stringify(roomData) + ' hier is de users')
+
+        
+    io.emit('point', roomData)
+    })
     
     socket.on('correct-answer', async message =>{
     // fetch
@@ -117,10 +140,9 @@ io.on('connection', (socket) => {
         return json
     }
 
-    score = 0
 
     var fetchTest = await fetchData()
-    io.emit('correct-answer-function', {message, fetchTest, score})
+    io.emit('correct-answer-function', {message, fetchTest})
     })
 
 

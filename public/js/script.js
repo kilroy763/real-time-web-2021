@@ -15,6 +15,7 @@ messageForm.addEventListener('submit', e =>{
 
     if ( message === answer){
         var checkMSG = "Dit is goed!"
+        addPoint()
         socket.emit('correct-answer', message)
     } else{
         var checkMSG = "Dit is fout!"
@@ -40,27 +41,33 @@ function appendMessage(message){
     messageContainer.append(messageElement)
 }
 
-function appendPlayer(player){
-    const playerElement = document.createElement('div')
-    playerElement.innerText = ''
-    playerElement.innerText = player
-    playerContainer.append(playerElement)
-}
-
-function appendScore(score){
-    const playerElement = document.createElement('span')
-    playerElement.setAttribute("id", "scores");
-    playerElement.innerText = score
-    playerContainer.append(playerElement)
-}
 
 function updateList(data) {
 
     playerContainer2.innerHTML = ''
     data.forEach(obj => {
-        playerContainer2.innerHTML += '<div ><p class="username">' + obj.user + '</p><p id="scores">' + obj.score + '</p></div>'
+
+        
+        let me 
+        if(obj.user === user){
+            me = 'thisUser'
+        } else {
+            me = 'user'
+        }
+
+        playerContainer2.innerHTML += '<div class=' + me + '><p class="username">' + obj.user + '</p><p class="scores">' + obj.score + '</p></div>'
     })
 }
+
+function addPoint(){
+    let score = document.querySelector('.thisUser .scores').innerHTML
+
+    console.log(score + ' dit is de hduige score')
+
+    socket.emit('point', {user: user, score: score})
+}
+
+
 
 // updates userlist, so scores and users
 
@@ -71,10 +78,19 @@ socket.emit('new-user', user)
 socket.on('connect', () => {console.log(socket.id + 'user connected')});
 
 
+socket.on('point', data =>{
+    messageContainer.innerHTML += '<p>' + data.user + ' heeft het goed!</p>'
+
+    let newScore = document.querySelector('.thisUser .scores')
+    // newScore.innerHTML = data.newScore
+    updateList(data)
+    console.log(newScore.innerHTML)
+    console.log( JSON.stringify(data) + ' punt data')
+})
 
 socket.on('chat-message', data2 => {
-    console.log(data2)
-    appendMessage(`${data2.user}: ${data2.message}  `)
+    console.log(JSON.stringify(data2) + 'dit is data 2')
+    appendMessage(`${data2.user.user}: ${data2.message}  `)
 })
 
 socket.on('answer', checkMSG =>{
@@ -92,12 +108,12 @@ socket.on('correct-answer-function', correct =>{
     tableRow.innerHTML = '';
 
  
-    var score = document.getElementById('scores').innerHTML 
-    console.log(score + ' dit is score ')
-    let scores = Number(score)
-    console.log(scores)
-        let newScore = scores + 1
-        document.getElementById('scores').innerHTML = newScore
+    // var score = document.getElementById('scores').innerHTML 
+    // console.log(score + ' dit is score ')
+    // let scores = Number(score)
+    // console.log(scores)
+    //     let newScore = scores + 1
+    //     document.getElementById('scores').innerHTML = newScore
 
     // var score = document.getElementById('scores').value
   
@@ -108,7 +124,7 @@ socket.on('correct-answer-function', correct =>{
     // score = isNaN(score) ? 0 : score;
     // +score++;
  
-    console.log(typeof(score) + ' scoreee')
+    // console.log(typeof(score) + ' scoreee')
 
     
 
@@ -136,7 +152,7 @@ socket.on('correct-answer-function', correct =>{
 socket.on('user-connected', userData => {
     
     console.log(JSON.stringify(userData) + ' dit is de userdata')
-    console.log(userData)
+
     updateList(userData)
     // userData.forEach(user => {
     //     appendMessage(`${user.user} is erbij`)
@@ -144,7 +160,7 @@ socket.on('user-connected', userData => {
     //     appendScore(`${user.score}`)
     // })
 
-    // appendMessage(`${userData.users.allUsers.user} is erbij`)
+  
     // console.log(JSON.stringify(userData) + ' dit is de userdata')
     // console.log(userData)
 
@@ -153,7 +169,7 @@ socket.on('user-connected', userData => {
 })
 
 socket.on('user-disconnected', user => {
-    appendMessage(`${user.user} is weg`)
+    
     updateList(user)
 })
 
