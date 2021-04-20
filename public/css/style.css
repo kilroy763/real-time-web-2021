@@ -17,7 +17,7 @@ body {
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr 1fr;
   
     gap: 0px 0px;
     grid-template-areas:
@@ -75,6 +75,7 @@ article{
     border-radius: 10% 10% 0 0 ;
     margin: 5em auto 0em auto;
 }
+
 article > h1, article > p{
     padding: 0.5em;
 }
@@ -100,6 +101,8 @@ article > h1, article > p{
 
 .login > form > input[type=submit]{
     color: white;
+    font-size: 1.5em;
+    border-radius: 0 0 10%   10%;
     background-color:#DC0000;
     border: none;
     width: 100%;
@@ -118,10 +121,45 @@ td{
     padding: 0.25em 1em 0.25em 1em;
 }
 
+.header{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
 .headerLogo{
-    width: 200px;
+    width: 300px;
+    padding: 2em;
     display: flex;
+    margin: 0 auto;
     justify-content: center;
     grid-area: logo;
     text-align: center;
+}
+
+.headerLogo2{
+    width: 200px;
+}
+
+input[type=text]{
+    border: none;
+    text-align: center;
+    border-bottom: 3px solid #DC0000;
+
+    width: 80%;
+    margin: 2em auto;
+}
+
+.login{
+    background-color: #15151E;;
+}
+
+.login > form {
+    background-color: white;
+    border-radius: 0 0 10%   10%;
+}
+
+.login > h2 {
+    background-color: white;
+    border-radius:  20%   20% 0 0 ;
 }
