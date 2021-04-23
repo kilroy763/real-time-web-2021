@@ -1,5 +1,7 @@
 
 # Real-Time Web @cmda-minor-web · 2020/21
+Voor dit vak heb ik een real-time applicatie gemaakt. Hierbij heb ik kennis gemaakt met Socket.io tussen de server en client side. 
+
 
 ## Live link
 https://formula1trivia.herokuapp.com/home
