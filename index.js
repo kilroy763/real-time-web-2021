@@ -32,6 +32,7 @@ function redirect(req, res) {
     res.redirect('/home');
 }
 
+// alle routes
 app.get('/home', render.home)
 
 app.get('/login', render.login)
@@ -44,25 +45,12 @@ app.post('/season/drivers', render.test)
 
 app.get('/season/constructor', render.constructor)
 
-
-// let fetchDataTest 
-
-// async function fetchTest(){
-//     fetchDataTest = await fetcher.fetchData()
-// }
-
-// fetchTest()
-
-// console.log(fetchDataTest)
-
+// array voor de users
 const users = {}
 
-
-
-
+// socket io connection
 io.on('connection', (socket) => {
     console.log(socket.id + ' is geconnect')
-
 
     socket.on("new-user", user => {
 
@@ -79,28 +67,9 @@ io.on('connection', (socket) => {
 
         console.log(JSON.stringify(roomData) + ' dit is de roomdata')
 
-
-
-
-
-
-        // userID = socket.id
-        // user = {user: user, score: 0, userID: userID}
-        // users['allUsers'] = user
-
         io.emit('user-connected', roomData)
         console.log(JSON.stringify(users) + ' dit is user array')
         console.log(JSON.stringify(user) + ' dit zijn de users')
-    })
-
-    socket.on("disconnect", () => {
-        let roomData = []
-        delete users[socket.id]
-        for (const [key, value] of Object.entries(users)) {
-            roomData.push(users[key])
-        }
-        console.log(JSON.stringify(users) + ' dit zijn de users na disconnect')
-        socket.broadcast.emit('user-disconnected', roomData)
     })
 
     socket.on('send-chat-message', message => {
@@ -116,7 +85,6 @@ io.on('connection', (socket) => {
 
         let roomData = []
 
-
         let userId = socket.id
 
         let score = Number(data.score)
@@ -129,8 +97,6 @@ io.on('connection', (socket) => {
         for (const [key, value] of Object.entries(users)) {
             roomData.push(users[key])
         }
-        // console.log(JSON.stringify(roomData) + ' hier is de users')
-
 
         io.emit('point', roomData)
     })
@@ -150,14 +116,12 @@ io.on('connection', (socket) => {
             return json
         }
 
-
         var fetchTest = await fetchData()
         io.emit('correct-answer-function', {
             message,
             fetchTest
         })
     })
-
 
     socket.on('check-answer', checkMSG => {
         console.log(checkMSG + ' checkmsg')
@@ -172,8 +136,18 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('answer', checkMSG)
     })
 
-})
+    socket.on("disconnect", () => {
+        let roomData = []
+        delete users[socket.id]
+        for (const [key, value] of Object.entries(users)) {
+            roomData.push(users[key])
+        }
+        console.log(JSON.stringify(users) + ' dit zijn de users na disconnect')
+        socket.broadcast.emit('user-disconnected', roomData)
+    })
+    
 
+})
 
 // server set up
 http.listen(process.env.PORT || port, function () {

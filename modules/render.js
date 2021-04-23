@@ -1,19 +1,5 @@
 const fetcher = require('./fetch')
 
-// async function actor(req, res) {
-//     const data = await fetcher.fetchActor()
-//     res.render('actor', {
-//         info: data
-//     });
-//     console.log(data)
-// }
-
-// async function movie(req, res) {
-//     const movieData = await fetcher.fetchMovie()
-//     res.render('movie', {
-//         movieInfo: movieData
-//     });
-// }
 
 async function home(req, res) {
     res.render('home');
@@ -34,9 +20,6 @@ async function test(req, res) {
     });
 }
 
-
-
-
 async function constructor(req, res) {
     const fetchData2 = await fetcher.fetchDataConstructorQ()
     res.render('constructor', {
@@ -45,13 +28,7 @@ async function constructor(req, res) {
 }
 
 
-
-
-
 module.exports = {
-    // actor,
-    // show,
-    // movie,
     home,
     test,
     constructor,
