@@ -1,5 +1,7 @@
 
 # Real-Time Web @cmda-minor-web · 2020/21
+Voor dit vak heb ik een real-time applicatie gemaakt. Hierbij heb ik kennis gemaakt met Socket.io tussen de server en client side. 
+
 
 ## Live link
 https://formula1trivia.herokuapp.com/home
@@ -48,8 +50,8 @@ Aan het eind van de dag ging ik kijken naar de API die ik in de vorige vakken al
 Tot slot had ik het concept voor een F1 quiz. Ik heb een API gevonden die informatie bevat van alle seizoenen. Hierom wil ik een app maken waarbij je rooms kan maken met een optie tot 1 vs 1 kennis test. Je krijgt dan random feiten te zien over bepaalde seizoenen en moet dan raden welk seizoen het bijvoorbeeld is. 
 ![F1 quiz schets](https://github.com/kilroy763/real-time-web-2021/blob/main/ReadmeImages/concept4.jpg?raw=true)  
 
-### Gekozen API
-De gekozen API is de Formula 1 API van Ergast (https://ergast.com/mrd/). Dit is een API dat jaarlijks update, hierin staat allerlij formule 1 gegevens. Je kan de races, courreurs, tracks en teams terugvinden.
+### Gekozen Concept
+Het gekozen concept is de Formula 1 quiz met de F1 API van Ergast(https://ergast.com/mrd/). Dit is een API dat jaarlijks update, hierin staat allerlij formule 1 gegevens. Je kan de races, courreurs, tracks en teams terugvinden.
 
 #### Wat doet de web app
 Gebruiker een username laten invoeren en tegen elkaar laten spelen. Door middel van de API fetch ik een random tabel met driver standings van een random seizoen. Hierbij moeten de gebruikers raden over welk seizoen het gaat. Het ingevoerde seizoen wordt gecheckt of dit goed is. Als dit goed is krijgt de speler die hem als eerste invoerde een punt en dan wordt er weer een nieuw seizoen gefetched,
