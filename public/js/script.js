@@ -11,6 +11,7 @@ messageForm.addEventListener('submit', e => {
     e.preventDefault()
     const message = answerInput.value
     const answer = document.getElementById('antwoord').innerHTML
+    console.log(answer)
 
     if (message === answer) {
         var checkMSG = "Dit is goed!"
