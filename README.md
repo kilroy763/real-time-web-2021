@@ -186,6 +186,9 @@ npm run start
 ```
 De server is dan te vinden op http://localhost:5000
 
+## Conclusie
+Ik vond het project erg leuk. Ik had nog nooit met sockets gewerkt en vondt dit erg interessant. Ik had in het begin wat moeite met een concept verzinnen alleen uit eindelijk heb ik iets gemaakt waar ik echt trots op ben. Als ik wat langer de tijd had gehad of bijvoorbeeld nog 3 weken extra dan had ik de volgende dingen extra willen toevoegen. Namenljk: rooms, win state en verschillende game opties. Dit heb ik nu niet gedaan omdat ik hier geen tijd meer voor had. 
+
 ## Gebruikte bronnen
 
 * *w3schools. (z.d.). HTML DOM Table insertRow() Method. Geraadpleegd op 20 april 2021, van https://www.w3schools.com/jsref/met_table_insertrow.asp* 
